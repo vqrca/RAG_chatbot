@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafés Especiais - Grãos Nobres</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5ebe0;
+            color: #3e2723;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            width: 100%;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #6f4e37;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3e2723;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #6f4e37;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products h2 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #6f4e37;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+            color: #6f4e37;
+        }
+
+        .product-origin {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #3e2723;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3e2723;
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #6f4e37;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #5d4130;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">Grãos Nobres</a>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Produtos</a>
+                <a href="#">Sobre</a>
+                <a href="#">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cafés Especiais em Grãos</h1>
+            <p>Descubra os melhores grãos de café especial de microlotes ao redor do mundo</p>
+            <a href="#" class="btn">Explorar Cafés</a>
+        </div>
+    </section>
+
+<section class="products">
+    <h2>Nossos Grãos Selecionados</h2>
+    <div class="product-grid">
+        <!-- Primeira Linha -->
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1580591090179-2e3c3cb32d72')"></div>
+            <div class="product-info">
+                <h3>Blend Especial</h3>
+                <div class="product-origin">Bourbon Amarelo + Vermelho</div>
+                <div class="product-taste">Notas: Caramelo, Nozes, Finalização Picante</div>
+                <div class="product-price">R$ 64,90 / 250g</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1580591090179-2e3c3cb32d72')"></div>
+            <div class="product-info">
+                <h3>Bourbon Vermelho</h3>
+                <div class="product-origin">Chapada Diamantina - BA</div>
+                <div class="product-taste">Notas: Chocolate, Nozes, Frutas Secas</div>
+                <div class="product-price">R$ 54,90 / 250g</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1580591090179-2e3c3cb32d72')"></div>
+            <div class="product-info">
+                <h3>Bourbon Amarelo</h3>
+                <div class="product-origin">Chapada Diamantina - BA</div>
+                <div class="product-taste">Notas: Caramelo, Frutas Vermelhas, Chocolate</div>
+                <div class="product-price">R$ 49,90 / 250g</div>
+            </div>
+        </div>
+
+        <!-- Segunda Linha -->
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1580591090179-2e3c3cb32d72')"></div>
+            <div class="product-info">
+                <h3>Catuaí Amarelo</h3>
+                <div class="product-origin">Sul de Minas - MG</div>
+                <div class="product-taste">Notas: Cítricos, Mel, Açúcar Mascavo</div>
+                <div class="product-price">R$ 47,90 / 250g</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1580591090179-2e3c3cb32d72')"></div>
+            <div class="product-info">
+                <h3>Ethiopia Yirgacheffe</h3>
+                <div class="product-origin">Etiópia</div>
+                <div class="product-taste">Notas: Florais, Frutas Tropicais, Chá Preto</div>
+                <div class="product-price">R$ 59,90 / 250g</div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1580591090179-2e3c3cb32d72')"></div>
+            <div class="product-info">
+                <h3>Geisha</h3>
+                <div class="product-origin">Panamá</div>
+                <div class="product-taste">Notas: Jasmine, Pêssego, Bergamota</div>
+                <div class="product-price">R$ 89,90 / 250g</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre Nós</h4>
+                <p>Especialistas em cafés especiais desde 2010, trazendo os melhores grãos de microlotes para verdadeiros apreciadores.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>Email: contato@graosnobres.com</p>
+                <p>Telefone: (11) 99999-9999</p>
+            </div>
+            <div class="footer-section">
+                <h4>Siga-nos</h4>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
