@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafés Especiais - Grãos Nobres</title>
-    <script src="https://cdn.jsdelivr.net/gh/logspace-ai/langflow-embedded-chat@v1.0.7/dist/build/static/js/bundle.min.js"</script>
+    <script src="https://cdn.jsdelivr.net/gh/logspace-ai/langflow-embedded-chat@v1.0.7/dist/build/static/js/bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -58,6 +58,24 @@
 
         .nav-links a:hover {
             color: #6f4e37;
+        }
+
+        .chat-container {
+            position: fixed; /* Mantém o chatbot fixo em uma posição na tela */
+            bottom: 30px;    /* Espaçamento do fundo da página */
+            right: 30px;     /* Espaçamento do lado direito da página */
+            width: 18vw;     /* A largura é uma porcentagem da largura da janela, reduzindo mais um pouco */
+            height: 35vh;    /* A altura é uma porcentagem da altura da janela, ajustada para ser menos intrusiva */
+            max-width: 280px; /* Máximo de largura ajustado */
+            max-height: 450px; /* Máximo de altura ajustado */
+            z-index: 1001;   /* Assegura que o chatbot fique visível acima de outros elementos */
+            border-radius: 8px; /* Adiciona bordas arredondadas para um design mais suave */
+            overflow: hidden; /* Evita que o conteúdo interno derrame para fora do contêiner */
+        }
+
+        langflow-chat {
+            width: 10%;     /* Faz o chatbot preencher a largura do container */
+            height: 10%;    /* Faz o chatbot preencher a altura do container */
         }
 
         /* Hero Section */
@@ -213,14 +231,17 @@
                 grid-template-columns: 1fr;
             }
         }
+
     </style>
 </head>
 <body>
-    <langflow-chat
-    window_title="Vector Store RAG"
-    flow_id="d9c06afa-888c-413a-8049-9e6b4984a11d"
-    host_url="http://127.0.0.1:7860"
-    ></langflow-chat>   
+    <div id="chat-container">
+        <langflow-chat
+        window_title="Assistente virtual"
+        flow_id="d9c06afa-888c-413a-8049-9e6b4984a11d"
+        host_url="http://127.0.0.1:7860"
+        ></langflow-chat>
+    </div> 
     <header>
         <nav>
             <a href="#" class="logo">Grãos Nobres</a>
